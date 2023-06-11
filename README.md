@@ -2,9 +2,9 @@
 Python script for finding all unique domain names available in the Common Crawl dataset (https://commoncrawl.org/).
 
 # Installing/running
-Clone repo locally
-Install requirements: `pip3 install -r requirements.txt`
-Run it: `python3 commoncrawl-domain-finder.py`
+- Clone repo locally
+- Install requirements: `pip3 install -r requirements.txt`
+- Run it: `python3 commoncrawl-domain-finder.py`
 
 # Output
 This script will create the following content on your machine:
