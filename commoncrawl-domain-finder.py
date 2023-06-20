@@ -99,6 +99,8 @@ with requests.get(index_file,stream=True, headers=http_headers) as res:
             print("\t- Saving "+str(len(domains_to_save))+" domains to disk")
             for domain in domains_to_save:
                 domain = domain.strip().lower()
+                if len(domain) == 0:
+                    continue
                 domain_path = "domains/"+domain[0]+".txt"
                 if not os.path.exists(domain_path):
                     open(domain_path, "a+")
