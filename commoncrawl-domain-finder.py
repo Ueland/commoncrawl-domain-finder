@@ -98,14 +98,15 @@ with requests.get(index_file,stream=True, headers=http_headers) as res:
 
             print("\t- Saving "+str(len(domains_to_save))+" domains to disk")
             for domain in domains_to_save:
-                domain = domain.strip().lower()
-                if len(domain) == 0:
+                domain = domain.lower()
+                clean_domain = domain.strip()
+                if len(clean_domain) == 0:
                     continue
-                domain_path = "domains/"+domain[0]+".txt"
+                domain_path = "domains/"+clean_domain[0]+".txt"
                 if not os.path.exists(domain_path):
                     open(domain_path, "a+")
 
-                with open("domains/"+domain[0].lower()+".txt", "a") as dfw:
+                with open("domains/"+clean_domain[0].lower()+".txt", "a") as dfw:
                     dfw.write(domain)
 
             os.remove("./cache/urls.txt")
